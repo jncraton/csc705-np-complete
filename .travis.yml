@@ -8,6 +8,7 @@ os:
 dist:
     - xenial
 before_install:
+    - sudo apt update
     - sudo apt install graphviz graphviz-dev pandoc
 install:
     - pip3 install -r requirements.txt
