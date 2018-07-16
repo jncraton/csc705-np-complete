@@ -9,8 +9,6 @@
 
 ----
 
-https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability
-
 The basic idea is to convert the solutions to the 3SAT problem to cliques that can be found using algorithms for the CLIQUE problem.
 
 Let ϕ be an expression with k clauses as follows:
@@ -36,9 +34,25 @@ Consider the case when G has a k-clique. Each node in the clique will represent 
 
 ∴ G will have a k-clique if and only if ϕ is satisfiable.
 
-Longest Path reduces to Hamilton Path
+- Sipser, Michael. Introduction to the Theory of Computation. Vol. 2. Boston: Thomson Course Technology, 2006.
+- https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability
+
+Hamilton Path reduces to Longest Path
 =====================================
 
 ----
 
-https://en.wikipedia.org/wiki/Longest_path_problem
+The basic idea for this proof is to show that Longest Path is NP-Complete by demonstrating that it is NP-hard via a reduction from Hamilton Path.
+
+A Hamilton path is one that visits each vertex exactly once. We can see that the Hamilton Path Problem is trivially related to the Longest Path Problem because if we find that the longest path has a length of n-1 where n is the number of nodes, the longest path is a Hamilton path. Consider these two cases:
+
+1. Graph G has a Hamilton Path - In this case the Longest Path algorithm will correctly return the longest path and therefore Hamilton Path as its result.
+2. Graph G does not have a Hamilton Path - In this case the Longest Path algorithm will produce a path of length less than n-1.
+
+∴ The length of the longest path in G will be n-1 if and only if G has a Hamilton Path.
+
+----
+
+- https://en.wikipedia.org/wiki/Longest_path_problem
+- https://en.wikipedia.org/wiki/Hamiltonian_path_problem
+- https://en.wikipedia.org/wiki/Hamiltonian_path
