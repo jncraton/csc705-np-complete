@@ -2,36 +2,58 @@
 % Jon Craton
 % [![Build Status](https://travis-ci.org/jncraton/csc705-np-complete.svg?branch=master)](https://travis-ci.org/jncraton/csc705-np-complete) [![GitHub last commit](https://img.shields.io/github/last-commit/jncraton/csc705-np-complete.svg)](https://github.com/jncraton/csc705-np-complete)
 
-[Rendered Output](https://jncraton-demo2-np-complete.netlify.com)
+[View Paper](https://jncraton-demo2-np-complete.netlify.com)
+
+[View Slides](https://jncraton-demo2-np-complete.netlify.com/slides.html)
 
 Partition reduces to Job Shop Problem
 ===================================
 
 ----
 
+Proof Idea
+----------
+
 We will show that the Job Shop Problem (JSP) is NP-Hard by reducing Partition to it.
+
+----
 
 Consider the following Job Shop decision problem:
 
 > Given n jobs with processing times pₖ and a number D, can you schedule them on m machines so as to complete by time D?
 
+----
+
 And the following definition of Partition:
 
 > Given a list of t positive integers S S={x₁, x₂, x₃,…,xₖ} is there a subset of S that sums to the remainder of S?
 
+----
+
 Consider a 2-machine instance of the Job Shop Problem mapped to a Partition problem with the processing times mapped to the positive integers.
+
+----
 
 When there is a valid partition, the total makespan will be the size of the partition. We can sum the jobs on both machines. They will both equal the makespan iff there is a valid partition.
 
-When there is not a valid partition, we can sum the number of jobs on both machine. Their sum will be unequal iff there is no valid partition. This is due to the fact that an optimal makespan and a valid partition both occur when partitions are equal.
+When there is not a valid partition, we can sum the number of jobs on both machines. Their sum will be unequal iff there is no valid partition. This is due to the fact that an optimal makespan and a valid partition both occur when partitions are equal.
 
-A partition exists if and only if the jobs scheduled on the two machines have an equal sum.
+----
 
-∴ Partition is polynomial time reducible to the JSP.
+A partition exists if and only if the jobs scheduled on both machines have an equal runtime.
+
+Partition is polynomial time reducible to the JSP. We can use the JSP to compute partition in polynomial time if we can compute the JSP in polynomial time.
+
+∴ JSP is NP-Hard
+
+----
 
 This shows that JSP is NP-Hard. It is in NP, because given a list of jobs to schedule on machines as a certificate, we can trivially verify their validity and makespan in polynomial time.
 
 ∴ This version of the JSP is NP-complete.
+
+References
+----------
 
 - https://en.wikipedia.org/wiki/Job_shop_scheduling
 - https://en.wikipedia.org/wiki/Partition_problem
