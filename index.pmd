@@ -65,33 +65,70 @@ References
 
 ----
 
-The basic idea is to convert the solutions to the 3SAT problem to cliques that can be found using algorithms for the CLIQUE problem.
+Proof idea
+----------
+
+Convert the solutions to the 3SAT problem to cliques that can be found using algorithms for the CLIQUE problem.
+
+----
 
 Let ϕ be an expression with k clauses as follows:
 
 ϕ = (a₁ ∨ b₁ ∨ c₁) ∧ (a₂ ∨ b₂ ∨ c₂) … ∧ (aₖ ∨ bₖ ∨ cₖ)
 
+----
+
 We can convert this expression to a graph G as follows:
 
 A group of nodes is created for each clause in ϕ. Each node represents a literal in the clause. So, for 3SAT each group will be a triple. We will have k triples, where k is the number of clauses in ϕ as shown above.
+
+----
 
 We then construct graph edges connecting all nodes except:
 
 1. No edges connect nodes in the same triple.
 2. No edges connect nodes with contradictory labels (a₁ would not connect to ¬a₁).
 
+----
+
+A possible SAT to Clique reduction:
+
+![](sat-clique.png)
+
+----
+
 Consider the case when ϕ is satisfiable. Select a value that satisfies its clause for each triple in G. These nodes will form a k-clique. Each node will be from a different triple and non-contradictory based on our construction.
 
-∴ G will have a k-clique if ϕ is satisfiable.
+G will have a k-clique if ϕ is satisfiable.
+
+----
 
 Consider the case when G has a k-clique. Each node in the clique will represent a different triple based on our construction. We can set boolean values for each node based on their labels. These values will not contradict, and each will satisfy its clause based on our constructions.
 
-∴ ϕ is satisfiable if G has a k-clique.
+ϕ is satisfiable if G has a k-clique.
 
-∴ G will have a k-clique if and only if ϕ is satisfiable.
+----
+
+G will have a k-clique if and only if ϕ is satisfiable.
+
+3SAT is polynomial time reducible to the CLIQUE. We can use CLIQUE to compute 3SAT in polynomial time if we can compute CLIQUE in polynomial time.
+
+∴ CLIQUE is NP-Hard
+
+----
+
+CLIQUE is also in NP. We can see this by considering a valid CLIQUE as a certificate. This certificate allows us to quickly verify whether or not some graph has a CLIQUE.
+
+Partition is polynomial time reducible to the JSP. We can use the JSP to compute partition in polynomial time if we can compute the JSP in polynomial time.
+
+∴ CLIQUE is NP-Complete
+
+References
+----------
 
 - Sipser, Michael. Introduction to the Theory of Computation. Vol. 2. Boston: Thomson Course Technology, 2006.
 - https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability
+- https://en.wikipedia.org/wiki/Clique_problem
 
 Hamilton Path reduces to Longest Path
 =====================================
