@@ -1,4 +1,4 @@
-% Demo 2 - NP-Completeness
+% NP-Completeness
 % Jon Craton
 % [![Build Status](https://travis-ci.org/jncraton/csc705-np-complete.svg?branch=master)](https://travis-ci.org/jncraton/csc705-np-complete) [![GitHub last commit](https://img.shields.io/github/last-commit/jncraton/csc705-np-complete.svg)](https://github.com/jncraton/csc705-np-complete)
 
@@ -119,8 +119,6 @@ G will have a k-clique if and only if ϕ is satisfiable.
 
 CLIQUE is also in NP. We can see this by considering a valid CLIQUE as a certificate. This certificate allows us to quickly verify whether or not some graph has a CLIQUE.
 
-Partition is polynomial time reducible to the JSP. We can use the JSP to compute partition in polynomial time if we can compute the JSP in polynomial time.
-
 ∴ CLIQUE is NP-Complete
 
 References
@@ -135,16 +133,38 @@ Hamilton Path reduces to Longest Path
 
 ----
 
-The basic idea for this proof is to show that Longest Path is NP-Complete by demonstrating that it is NP-hard via a reduction from Hamilton Path.
+Proof idea
+----------
 
-A Hamilton path is one that visits each vertex exactly once. We can see that the Hamilton Path Problem is trivially related to the Longest Path Problem because if we find that the longest path has a length of n-1 where n is the number of nodes, the longest path is a Hamilton path. Consider these two cases:
+Show that Longest Path is NP-Complete by demonstrating that it is NP-hard via a reduction from Hamilton Path.
+
+----
+
+A Hamilton path is one that visits each vertex exactly once. We can see that the Hamilton Path Problem is trivially related to the Longest Path Problem because if we find that the longest path has a length of n-1 where n is the number of nodes, the longest path is a Hamilton path. 
+
+----
+
+Consider these two cases:
 
 1. Graph G has a Hamilton Path - In this case the Longest Path algorithm will correctly return the longest path and therefore Hamilton Path as its result.
 2. Graph G does not have a Hamilton Path - In this case the Longest Path algorithm will produce a path of length less than n-1.
 
-∴ The length of the longest path in G will be n-1 if and only if G has a Hamilton Path.
+----
+
+The length of the longest path in G will be n-1 if and only if G has a Hamilton Path.
+
+HPATH is polynomial time reducible to the Longest Path. We can use Longest Path to compute HPATH in polynomial time if we can compute Longest Path in polynomial time.
+
+∴ Longest Path is NP-Hard
 
 ----
+
+Longest Path is in NP because given a path as a certificate, we can quickly veryify that it meets the given length requirement in polynomial time.
+
+∴ Longest Path is NP-Complete
+
+References
+----------
 
 - https://en.wikipedia.org/wiki/Longest_path_problem
 - https://en.wikipedia.org/wiki/Hamiltonian_path_problem
