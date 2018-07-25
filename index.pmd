@@ -18,9 +18,13 @@ We will show that the Job Shop Problem (JSP) is NP-Hard by reducing Partition to
 
 ----
 
-Consider the following Job Shop decision problem:
+Consider the following flexible Job Shop decision problem:
 
 > Given n jobs with processing times pₖ and a number D, can you schedule them on m machines so as to complete by time D?
+
+----
+
+![](job-shop-example.jpg)
 
 ----
 
@@ -55,6 +59,7 @@ This shows that JSP is NP-Hard. It is in NP, because given a list of jobs to sch
 References
 ----------
 
+- Jian Xiong, Xu Tan, Ke-wei Yang, Li-ning Xing, and Ying-wu Chen, “A Hybrid Multiobjective Evolutionary Approach for Flexible Job-Shop Scheduling Problems,” Mathematical Problems in Engineering, vol. 2012, Article ID 478981, 27 pages, 2012. https://doi.org/10.1155/2012/478981.
 - https://en.wikipedia.org/wiki/Job_shop_scheduling
 - https://en.wikipedia.org/wiki/Partition_problem
 - https://en.wikipedia.org/wiki/Subset_sum_problem
