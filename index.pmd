@@ -38,13 +38,22 @@ Consider a 2-machine instance of the Job Shop Problem mapped to a Partition prob
 
 ----
 
-When there is a valid partition, the total makespan will be the size of the partition. We can sum the jobs on both machines. They will both equal the makespan iff there is a valid partition.
+We have a single job with a number of operations, so the operations will be assigned to the machines when one is available to avoid stalls.
+
+For example, take these operations {4,14,15,10,6,1}. They would be assigned to machines as they become available as:
+
+M₁ = {4,15,6}
+M₂ = {14,10,1}
+
+----
+
+When there is a valid partition, we can sum the jobs on both machines. They will both equal the makespan (no stalls) iff there is a valid partition.
 
 When there is not a valid partition, we can sum the number of jobs on both machines. Their sum will be unequal iff there is no valid partition. This is due to the fact that an optimal makespan and a valid partition both occur when partitions are equal.
 
 ----
 
-A partition exists if and only if the jobs scheduled on both machines have an equal runtime.
+A partition exists if and only if the jobs scheduled on both machines have an equal runtime. Equivalently, the total makespan will be half the total time required, and there will be no stalls.
 
 Partition is polynomial time reducible to the JSP. We can use the JSP to compute partition in polynomial time if we can compute the JSP in polynomial time.
 
