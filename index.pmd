@@ -6,8 +6,8 @@
 
 [View Slides](https://jncraton-demo2-np-complete.netlify.com/slides.html)
 
-Partition reduces to Job Shop Problem
-===================================
+Job Shop Problem is NP-Complete
+===============================
 
 ----
 
@@ -74,8 +74,8 @@ References
 - https://en.wikipedia.org/wiki/Subset_sum_problem
 - http://www.columbia.edu/~cs2035/courses/ieor4405.S16/npc-sched.pdf
 
-3SAT reduces to CLIQUE
-======================
+CLIQUE is NP-Complete
+=====================
 
 ----
 
@@ -142,8 +142,8 @@ References
 - https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability
 - https://en.wikipedia.org/wiki/Clique_problem
 
-Hamiltonian Path reduces to Longest Path
-=====================================
+Longest Path is NP-Complete
+===========================
 
 ----
 
