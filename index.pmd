@@ -30,7 +30,7 @@ Consider the following flexible Job Shop decision problem:
 
 And the following definition of Partition:
 
-> Given a list of t positive integers S S={x₁, x₂, x₃,…,xₖ} is there a subset of S that sums to the remainder of S?
+> Given a list of t positive integers S, S={x₁, x₂, x₃,…,xₖ}, is there a subset of S that sums to the remainder of S?
 
 ----
 
