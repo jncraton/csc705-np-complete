@@ -128,7 +128,7 @@ References
 - https://en.wikipedia.org/wiki/Boolean_satisfiability_problem#3-satisfiability
 - https://en.wikipedia.org/wiki/Clique_problem
 
-Hamilton Path reduces to Longest Path
+Hamiltonian Path reduces to Longest Path
 =====================================
 
 ----
@@ -136,22 +136,22 @@ Hamilton Path reduces to Longest Path
 Proof idea
 ----------
 
-Show that Longest Path is NP-Complete by demonstrating that it is NP-hard via a reduction from Hamilton Path.
+Show that Longest Path is NP-Complete by demonstrating that it is NP-hard via a reduction from Hamiltonian Path.
 
 ----
 
-A Hamilton path is one that visits each vertex exactly once. We can see that the Hamilton Path Problem is trivially related to the Longest Path Problem because if we find that the longest path has a length of n-1 where n is the number of nodes, the longest path is a Hamilton path. 
+A Hamiltonian path is one that visits each vertex exactly once. We can see that the Hamiltonian Path Problem is trivially related to the Longest Path Problem because if we find that the longest path has a length of n-1 where n is the number of nodes, the longest path is a Hamiltonian path. 
 
 ----
 
 Consider these two cases:
 
-1. Graph G has a Hamilton Path - In this case the Longest Path algorithm will correctly return the longest path and therefore Hamilton Path as its result.
-2. Graph G does not have a Hamilton Path - In this case the Longest Path algorithm will produce a path of length less than n-1.
+1. Graph G has a Hamiltonian Path - In this case the Longest Path algorithm will correctly return the longest path and therefore Hamiltonian Path as its result.
+2. Graph G does not have a Hamiltonian Path - In this case the Longest Path algorithm will produce a path of length less than n-1.
 
 ----
 
-The length of the longest path in G will be n-1 if and only if G has a Hamilton Path.
+The length of the longest path in G will be n-1 if and only if G has a Hamiltonian Path.
 
 HPATH is polynomial time reducible to the Longest Path. We can use Longest Path to compute HPATH in polynomial time if we can compute Longest Path in polynomial time.
 
